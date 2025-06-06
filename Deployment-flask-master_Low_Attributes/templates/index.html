@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html style=" overflow: scroll; ">
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Fake profile</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+
+	<h1>Automation system detection for fake profile  in social media </h1>
+
+ <div class="login">
+
+	<h1><br> </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	profile pic<input type="text" name="profile pic" placeholder="profile pic" required="required" />
+        nums/length username<input type="text" name="nums/length username" placeholder="nums/length username" required="required" />
+	    fullname words<input type="text" name="fullname words" placeholder="fullname words" required="required" />
+		nums/length fullname<input type="text" name="nums/length fullname" placeholder="nums/length fullname" required="required" />
+		  name==username<input type="text" name="name==username" placeholder="name==username" required="required" />
+		    description length<input type="text" name="description length" placeholder="description length" required="required" />
+		      external URL<input type="text" name="external URL" placeholder="external URL" required="required" />
+			  private<input type="text" name="private" placeholder="private" required="required" />
+			   #posts<input type="text" name="#posts" placeholder="#posts" required="required" />
+			      #follows<input type="text" name="#follows" placeholder="#follows" required="require" />
+            #follows<input type="text" name="#follows" placeholder="#follows" required="required" />
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
